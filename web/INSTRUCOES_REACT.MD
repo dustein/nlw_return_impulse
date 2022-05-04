@@ -16,7 +16,7 @@ Dentro de src cria pasta components - arquivo Widget.tsx
 Vamos usar os icones da biblioteca phosphor
 npm install phosphor-react
 No arquivo tailwind.config podemos estender a propriedade de cores por ex
-Para acessibilidade - Aria - usaremos o headless / popover
+Para acessibilidade - Aria/Leitor de tela - usaremos o headless / popover
 npm install @headlessui/react
 Como essa biblio ja e integrada com o react, podemos tirar a parte que codamos de useState que ele vai fazer isso
 
