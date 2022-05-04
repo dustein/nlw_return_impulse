@@ -5,13 +5,13 @@ interface ButtonProps {
 
 function Button(props: ButtonProps) {
   // return <button>{props.text}</button>
-  return <button>{props.text ?? 'Texto Inicial'}</button>
+  return <button className="bg-violet-500 p-2 rounded">{props.text ?? 'Texto Inicial'}</button>
 }
 
 
 function App() {
   return (
-    <div>
+    <div className="flex p-2 gap-2">
       <Button text="Primeiro"/>
       <Button text="Segundo"/>
       <Button />
