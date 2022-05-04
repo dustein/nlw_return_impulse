@@ -5,7 +5,7 @@ interface ButtonProps {
 
 function Button(props: ButtonProps) {
   // return <button>{props.text}</button>
-  return <button className="bg-violet-500 p-2 rounded">{props.text ?? 'Texto Inicial'}</button>
+  return <button className="bg-violet-500 p-2 rounded hover:bg-slate-500">{props.text ?? 'Texto Inicial'}</button>
 }
 
 

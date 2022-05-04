@@ -12,4 +12,5 @@ cria arquivo no src global.css pro css global
 no main.ts importar o global.css
 No React quando queremos criar classes, nao usamos 'class' mas sim 'className'
 Dentro do className escreveremos os codigos de tailwindcss
+Dentro de src cria pasta components - arquivo Widget.tsx
 
