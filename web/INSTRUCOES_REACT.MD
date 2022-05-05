@@ -19,4 +19,7 @@ No arquivo tailwind.config podemos estender a propriedade de cores por ex
 Para acessibilidade - Aria/Leitor de tela - usaremos o headless / popover
 npm install @headlessui/react
 Como essa biblio ja e integrada com o react, podemos tirar a parte que codamos de useState que ele vai fazer isso
-
+Criou o Widget. Depois o WidgetForm.
+Config pra CSS diferente - responsividade - se for tela pequena celular ou tablet/desktop no WidgetForm:  w-[calc(100vw-2rem)] md:w-auto
+Cria componente closebutton
+Aula 2 26min
