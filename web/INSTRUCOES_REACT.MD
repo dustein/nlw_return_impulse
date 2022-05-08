@@ -22,4 +22,4 @@ Como essa biblio ja e integrada com o react, podemos tirar a parte que codamos d
 Criou o Widget. Depois o WidgetForm.
 Config pra CSS diferente - responsividade - se for tela pequena celular ou tablet/desktop no WidgetForm:  w-[calc(100vw-2rem)] md:w-auto
 Cria componente closebutton
-Aula 2 26min
+Aula 2 58min
