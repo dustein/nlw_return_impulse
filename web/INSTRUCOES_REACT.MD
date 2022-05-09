@@ -25,4 +25,7 @@ Cria componente closebutton
 Instalou plugin do tailwindcss: npm install -D @tailwindcss/forms
 Conforme instrucao do plugin adicionar no tailwindcss.config "require('@tailwindcss/forms')
 Para estilizar a scrollbar, instalou plugin externo no tailwind: npm install --save-dev tailwind-scrollbar. Adicionar no config o require('tailwind-scrollbar')
+Para o screenshot da tela, instalar ferramente html2canvas. 
+base64image tira pega a imagem que foi feita no screenshot com o html2canvas e converte para texto (veja inspecionar o elemento o texto e cole no navegador)
+
 
