@@ -25,6 +25,7 @@ Vamos entao separar as rotas em um arquivo proprio
 Para isso no arquivo routes, temos que criar o Route() que vai substituir ali o app, e depois exportar para ser importado no server.ts para uso no app.use(routes)
 Criamos pasta repositories (poderia ser 'database') sao os aqruivos que serao os responsaveis para fazer a comunicacao com o banco de dados, podemos separar um arquivo por entidade.
 Dentro do repositories criamos ainda a pasta Prisma.
+Criamos uma nova pasta para cada funcionalidade separada, vamos nomear use-cases (casos de uso) cada acao que um ator pode fazer dentro da aplicacao
 
 
 
