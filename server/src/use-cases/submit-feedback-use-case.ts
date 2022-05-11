@@ -1,5 +1,4 @@
 import { FeedbacksRepository } from "../repositories/feedbacks-repository";
-import { PrismaFeedbacksRepository } from "../repositories/prisma/prisma-feedbacks-repository";
 
 interface SubmitFeedbackUseCaseRequest {
    type: string;
@@ -9,24 +8,19 @@ interface SubmitFeedbackUseCaseRequest {
 
 export class SubmitFeedbackUseCase {
    
-   private feedbacksRepository: FeedbacksRepository
-
    constructor(
-      feedbacksRepository: FeedbacksRepository,
-   ) {
-      this.feedbacksRepository = feedbacksRepository
-   }
+      private feedbacksRepository: FeedbacksRepository,
+   ) {}
 
    async execute(request: SubmitFeedbackUseCaseRequest) {
       const { type, comment, screenshot } = request;
 
-      //se nao quisessemos seguir o principio da inversao de dependencias do SOLID para salvar no BD
-      // const prismaFeedbacksRepository = new PrismaFeedbacksRepository();
-
-      // await prismaFeedbacksRepository.create({
-      //    type,
-      //    comment,
-      //    screenshot,
-      // })
+      await this.feedbacksRepository.create({
+         type,
+         comment,
+         screenshot,
+      })
    }
 }
+
+//agora dentro do caso de uso nao tem nenhuma referencia do Prisma, entao se quisermos trocar a ORM em qualquer tempo, nao tera problema, pois essa classe nao depende diretamente do Prisma, o qual sera inversamente injetado dentro dessa classe como faremos a seguir. 
