@@ -13,7 +13,8 @@ Usaremos a ORM Prisma para comunicar com o banco de dados
 npm i prisma -D ( e mais para a producao em si (npm i @prisma/client)
 Executar o npx prisma init - vai criar a pasta prisma, um arquivo .env e o .gitignore
 Configurar o schema.prisma para usar o SQLite e o .env
-Aula 3 23 min
+npx prisma migrate dev - cria a tabela . Nome que pede e da ultima acao, no caso usamos "create feedbacks"
+O prisma tem um visualizador do BD embutida - npx prisma studio
 
 
 
