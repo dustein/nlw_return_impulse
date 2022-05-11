@@ -21,6 +21,9 @@ Passando configuracaso no parametro do Prismaclient "log: ['query']" para cada o
 Para envio de email, usaremos a biblioteca nodemailer (e instalar op @types/nodemailr -D)
 Precisamos entao de um servico de envio de emails, que na maioria das vezes nao criamos em nossa maquina, o SMTP. Usamos um servico externo. Existem vrariosa servicos, como o mailchimp. Mas para desenvolvimento usaremos o mailtrap. Copiar a configuracao do site e jogar no server.ts
 SOLID
+Vamos entao separar as rotas em um arquivo proprio
+Para isso no arquivo routes, temos que criar o Route() que vai substituir ali o app, e depois exportar para ser importado no server.ts para uso no app.use(routes)
+
 
 
 
