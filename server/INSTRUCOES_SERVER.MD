@@ -42,6 +42,11 @@ No jest.config.ts procurar  // transform: undefined, e mnodificar para o documen
 Dentro de usecases criamos o submit-feedback-use-case.spec.ts (poderia ser tb submit-feedback-use-case.test.ts). Aqui vamos colocar os testes.
 Depois de inserir o teste, rodar o npm run test
 Veja pasta coverage, o arquivo index.html vai dizer o quanto voce testou o arquivo, quais linhas de codigo os testes nao chegaram a tocar
+Tratamos de spies nos teste do jest (espioes) com o jest.fn();
+Teste retirar a parte que envia o email que vai falhar no teste agora
+Agora para integrar o bbackend com o front, usaremos o cors
+npm i cors ( e sua tipagem npm i -D @types/cors)
+Finaliada (falta a integracao, a ser feita em outra aula)
 
 
 

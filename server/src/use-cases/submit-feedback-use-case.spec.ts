@@ -4,17 +4,24 @@
 
 import { SubmitFeedbackUseCase } from "./submit-feedback-use-case"
 
+const createFeedbackSpy = jest.fn();
+const sendMailSpy = jest.fn();
+
+
 describe('Submit Feedback', () => {
    it('deveria ser capaz de enviar um feedback na aplicacao', async () => {
       const submitFeedback = new SubmitFeedbackUseCase(
-         { create: async () => {} },
-         { sendMail: async () => {} }
+         { create: createFeedbackSpy },
+         { sendMail: sendMailSpy }
       )
       await expect(submitFeedback.execute({
          type: 'BUG',
          comment: 'exemplo de comment',
          screenshot: 'data:image/png;base64.teste.imagem'
       })).resolves.not.toThrow();
+
+      expect(createFeedbackSpy).toHaveBeenCalled();
+      expect(sendMailSpy).toHaveBeenCalled();
    })
 
    it('nao deve ser possivel enviar feedback sem umn type', async () => {
