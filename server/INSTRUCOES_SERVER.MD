@@ -26,7 +26,8 @@ Para isso no arquivo routes, temos que criar o Route() que vai substituir ali o 
 Criamos pasta repositories (poderia ser 'database') sao os aqruivos que serao os responsaveis para fazer a comunicacao com o banco de dados, podemos separar um arquivo por entidade.
 Dentro do repositories criamos ainda a pasta Prisma.
 Criamos uma nova pasta para cada funcionalidade separada, vamos nomear use-cases (casos de uso) cada acao que um ator pode fazer dentro da aplicacao
-AUla 3 1:21
+Para o servico de envio de emails, criamos a pasta src/adapters o arquivo mail-adapter para nao misturar com os repositories
+Dentro de adapters, criamos tb a pasta nodemailer
 
 
 
