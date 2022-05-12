@@ -17,6 +17,11 @@ export class SubmitFeedbackUseCase {
    async execute(request: SubmitFeedbackUseCaseRequest) {
       const { type, comment, screenshot } = request;
 
+      //criada regra de negocio para ver se funciona no teste do Jest
+      if(screenshot && !screenshot.startsWith('data:image/png;base64')) {
+         throw new Error('screenshot com formato invalido')
+      }
+
       await this.feedbacksRepository.create({
          type,
          comment,
