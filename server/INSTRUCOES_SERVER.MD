@@ -41,6 +41,7 @@ No jest.config.ts procurar  // transform: undefined, e mnodificar para o documen
   }
 Dentro de usecases criamos o submit-feedback-use-case.spec.ts (poderia ser tb submit-feedback-use-case.test.ts). Aqui vamos colocar os testes.
 Depois de inserir o teste, rodar o npm run test
+Veja pasta coverage, o arquivo index.html vai dizer o quanto voce testou o arquivo, quais linhas de codigo os testes nao chegaram a tocar
 
 
 

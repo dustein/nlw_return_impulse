@@ -13,7 +13,49 @@ describe('Submit Feedback', () => {
       await expect(submitFeedback.execute({
          type: 'BUG',
          comment: 'exemplo de comment',
-         screenshot: 'teste.imagem'
+         screenshot: 'data:image/png;base64.teste.imagem'
       })).resolves.not.toThrow();
    })
+
+   it('nao deve ser possivel enviar feedback sem umn type', async () => {
+      const submitFeedback = new SubmitFeedbackUseCase(
+         { create: async () => {} },
+         { sendMail: async () => {} }
+      )
+
+      await expect(submitFeedback.execute({
+         type: '',
+         comment: 'exemplo de comment',
+         screenshot: 'data:image/png;base64.teste.imagem'
+      })).resolves.not.toThrow();
+   })
+
+   it('nao deve ser possivel enviar feedback sem umn comment', async () => {
+      const submitFeedback = new SubmitFeedbackUseCase(
+         { create: async () => {} },
+         { sendMail: async () => {} }
+      )
+      
+      await expect(submitFeedback.execute({
+         type: 'BUG',
+         comment: '',
+         screenshot: 'data:image/png;base64.teste.imagem'
+      })).resolves.not.toThrow();
+   })
+
+   it('nao deve ser possivel enviar feedback com uma screenshot invalida', async () => {
+      const submitFeedback = new SubmitFeedbackUseCase(
+         { create: async () => {} },
+         { sendMail: async () => {} }
+      )
+      
+      await expect(submitFeedback.execute({
+         type: 'BUG',
+         comment: 'exemplo de comment',
+         screenshot: 'teste.jpg'
+      })).resolves.not.toThrow();
+   })
+
 })
+
+

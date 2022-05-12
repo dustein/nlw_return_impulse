@@ -18,6 +18,15 @@ export class SubmitFeedbackUseCase {
       const { type, comment, screenshot } = request;
 
       //criada regra de negocio para ver se funciona no teste do Jest
+
+      if(!type) {
+         throw new Error('Necessario preencher type')
+      }
+
+      if(!comment) {
+         throw new Error('Necessario preencher comment')
+      }
+
       if(screenshot && !screenshot.startsWith('data:image/png;base64')) {
          throw new Error('screenshot com formato invalido')
       }
