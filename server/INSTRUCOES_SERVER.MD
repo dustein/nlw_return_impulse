@@ -28,6 +28,20 @@ Dentro do repositories criamos ainda a pasta Prisma.
 Criamos uma nova pasta para cada funcionalidade separada, vamos nomear use-cases (casos de uso) cada acao que um ator pode fazer dentro da aplicacao
 Para o servico de envio de emails, criamos a pasta src/adapters o arquivo mail-adapter para nao misturar com os repositories
 Dentro de adapters, criamos tb a pasta nodemailer
+Finalizada a criacao das funcionalidades
+Instalar o Jest -D
+Depois executa npx jest --init . vai criar o arquivo jest.config.ts
+Mas para uso em typescript, precisaremos instalar tambem o ts-node -D
+O jest por padrao nao entende Typescript, apenas JS. Entao usaremos um compilador, poderia ser o babel, mas usamos o SWC que e bem mais rapido.
+O SWC poderia ser usado para rodar toda a aplicacao, mas como a nossa esta bem pequena, usaremos apenas para rodar o jest
+npm i -D @swc/jest
+Instalar as tipagens do Jest npm -i @types/jest -D
+No jest.config.ts procurar  // transform: undefined, e mnodificar para o documentado no site do SWC:   transform: {
+    "^.+\\.(t|j)sx?$": ["@swc/jest"],
+  }
+Dentro de usecases criamos o submit-feedback-use-case.spec.ts (poderia ser tb submit-feedback-use-case.test.ts). Aqui vamos colocar os testes.
+Depois de inserir o teste, rodar o npm run test
+
 
 
 
