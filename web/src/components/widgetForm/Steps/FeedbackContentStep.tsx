@@ -1,10 +1,10 @@
-import { ArrowArcLeft } from "phosphor-react";
 import { FormEvent, useState } from "react";
+import { ArrowLeft } from "phosphor-react";
 import { FeedbackType, feedbackTypes } from "..";
-import { api } from "../../../lib/api";
 import { CloseButton } from "../../CloseButton";
-import { Loading } from "../../Loading";
 import { ScreenshotButton } from "../ScreenshotButton";
+import { api } from "../../../lib/api";
+import { Loading } from "../../Loading";
 
 interface FeedbackContentStepProps {
   feedbackType: FeedbackType;
@@ -32,7 +32,7 @@ export function FeedbackContentStep ({feedbackType, onFeedbackRestartRequested, 
 
     setIsSendingFeedback(true);
 
-    await api.post('feedbacks', {
+    await api.post('/feedbacks', {
       type: feedbackType,
       comment,
       screenshot
@@ -52,7 +52,7 @@ export function FeedbackContentStep ({feedbackType, onFeedbackRestartRequested, 
           className="top-5 left-5 absolute text-zinc-400 hover:text-zinc-100" 
           onClick={onFeedbackRestartRequested}
         >
-          <ArrowArcLeft weight="bold" className="w-4 h-4" /> 
+          <ArrowLeft weight="bold" className="w-4 h-4" /> 
         </button>
 
         <span className="text-xl leading-6 flex items-center gap-2">
@@ -90,7 +90,7 @@ export function FeedbackContentStep ({feedbackType, onFeedbackRestartRequested, 
             className="p-2 bg-cornova-500 rounded-md border-transparent flex-1 flex justify-center items-center text-sm hover:bg-cornova-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-cornova-500 transitions-colors disabled:opacity-50 disabled:hover:bg-cornova-500" 
           >
         
-            {isSendingFeedback? <Loading /> : 'Enviar Feedback'}
+            {isSendingFeedback ? <Loading /> : 'Enviar Feedback'}
           </button>
         
         </footer>
