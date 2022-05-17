@@ -1,10 +1,10 @@
 import { CloseButton } from "../../CloseButton";
 
-interface FeedbackSucessStepProps {
+interface FeedbackSuccessStepProps {
   onFeedbackRestartRequested: () => void;
 }
 
-export function FeedbackSucessStep ({onFeedbackRestartRequested}: FeedbackSucessStepProps) {
+export function FeedbackSuccessStep ({onFeedbackRestartRequested}: FeedbackSuccessStepProps) {
   return (
     <>
     
@@ -21,7 +21,11 @@ export function FeedbackSucessStep ({onFeedbackRestartRequested}: FeedbackSucess
 
       <span className="text-xl mt-2">Agradecemos o feedback</span>
     
-      <button type="button" onClick={onFeedbackRestartRequested} className="py-2 px-6 mt-6 bg-zinc-800 rounded-md border-transparent text-sm leading-6 hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-cornova-500 transitions-colors disabled:opacity-50 disabled:hover:bg-cornova-500">
+      <button 
+        type="button" 
+        onClick={onFeedbackRestartRequested} 
+        className="py-2 px-6 mt-6 bg-zinc-800 rounded-md border-transparent text-sm leading-6 hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-cornova-500 transitions-colors disabled:opacity-50 disabled:hover:bg-cornova-500"
+      >
         Quero enviar outro
       </button>
     </div>

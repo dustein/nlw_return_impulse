@@ -6,8 +6,7 @@ import ideaImageUrl from '../../assets/idea.svg';
 import thoughtImageUrl from '../../assets/thought.svg';
 import { FeedbackTypeStep } from './Steps/FeedbackTypeStep';
 import { FeedbackContentStep } from './Steps/FeedbackContentStep';
-import { FeedbackSucessStep } from './Steps/FeedbackSucessStep';
-
+import { FeedbackSuccessStep } from './Steps/FeedbackSuccessStep';
 
 
 export const feedbackTypes = {
@@ -52,7 +51,7 @@ export function WidgetForm () {
 
 
           { feedbackSent ? (
-               <FeedbackSucessStep onFeedbackRestartRequested={handleRestartFeedback} />
+               <FeedbackSuccessStep onFeedbackRestartRequested={handleRestartFeedback} />
           ) : (
                <>
                     {!feedbackType ? (
