@@ -28,4 +28,8 @@ Para estilizar a scrollbar, instalou plugin externo no tailwind: npm install --s
 Para o screenshot da tela, instalar ferramente html2canvas. 
 base64image tira pega a imagem que foi feita no screenshot com o html2canvas e converte para texto (veja inspecionar o elemento o texto e cole no navegador)
 
+Para fazer a integracao com o backend usaremos a biblioteca axios
+cria pasta lib (ou service, ou outra). Cria arquivo api.ts
+Em FeedbackContentStep no widgetForm/Steps onde mandavamnos um console.log apenas dentro da funcao handleSubmitFeedback, vamos fazer uma chamada para a api.post na rota fedbacks, e iremos enviar os dados que a rota espera.
+
 
