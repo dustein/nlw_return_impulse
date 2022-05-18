@@ -32,5 +32,11 @@ Para fazer a integracao com o backend usaremos a biblioteca axios
 cria pasta lib (ou service, ou outra). Cria arquivo api.ts
 Em FeedbackContentStep no widgetForm/Steps onde mandavamnos um console.log apenas dentro da funcao handleSubmitFeedback, vamos fazer uma chamada para a api.post na rota fedbacks, e iremos enviar os dados que a rota espera.
 
-Aula 5 12'
+Configurar variavel de ambiente do vite criando o arquivo .env.local
+Importar a variavel de ambiente no vite: "import.meta.env" na /lib/api.ts
+Reestart o servidor, pois trocou variavel de ambiente, senao ele nao ve
+
+Agora vamos jogar o frontend no Github pra comecar a fazer o deploy
+
+
 
