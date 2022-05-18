@@ -36,7 +36,20 @@ Configurar variavel de ambiente do vite criando o arquivo .env.local
 Importar a variavel de ambiente no vite: "import.meta.env" na /lib/api.ts
 Reestart o servidor, pois trocou variavel de ambiente, senao ele nao ve
 
-Agora vamos jogar o frontend no Github pra comecar a fazer o deploy
+Agora vamos jogar o projeto no Github pra comecar a fazer o deploy
+
+Deploy do frontend vai ser usada a Vercel. Importar projeto no site da Vercel.
+Como nao fizemos deploy do back, na configuracao de enviromment variables colocar la o VITE_API_URL mas coloca um site qualquer so para testar. Depois DEPLOY
+
+Deploy do backend vai ser usada a Railway. Precisaremos fazer alguas modificacoes no back.
+Alterar no schema.prisma o provider do banco de dados, ao inves de sqlite, vamos configurar para uso do postgress. Depois tem que setar a nova DATABASE_URL no arquivo .env
+Veja que o nosso projeto e em typescript, mas o que vai pro deploy sao os arquivos em JS.
+Adicionar a pasta dist no gitignore porque ela nao pode ir para producao
+No tsconfig.json adicionar  "include": ["src"] para incluir apenas o que esta na pasta src na conversao de TS para JS
+No package.json criar o script "build": "npx tsc",
+E um script "start": "node dist/server.js", para executar o server.js dessa vez
+
+
 
 
 
