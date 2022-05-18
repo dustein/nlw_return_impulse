@@ -49,7 +49,11 @@ No tsconfig.json adicionar  "include": ["src"] para incluir apenas o que esta na
 No package.json criar o script "build": "npx tsc",
 E um script "start": "node dist/server.js", para executar o server.js dessa vez
 
-
+Entrar no Railway (e tipo uma Vercel ou Heroko)
+Fazer deploy do Postrgesql
+Fazer deploy do diretorio github. Configurar pasta /server. Confirmuar start command para o script start que criamos (npm run start). O Healthcheck Pathsera uma rota para o Railway saber que nssa aplicacao esta funcional, depois configuramos pois nao criamos essa rota. Em variaveis, configuirar as variavde ambiente. No nosso caso colocaremos a DATABASE_URLm, e no value pegar o valor de conexao do servico do postgres criado no connect, Postgresql connection url.
+Agora temos que configurar a variavel PORT para a porta que esta sendo usada pela aplicacao (estavamos usando a 3333).
+No caso do Railways ele que precisa definir a porta. Entao no arquivo server usaremos process.env.PORT.
 
 
 
