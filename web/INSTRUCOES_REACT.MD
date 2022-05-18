@@ -54,6 +54,11 @@ Fazer deploy do Postrgesql
 Fazer deploy do diretorio github. Configurar pasta /server. Confirmuar start command para o script start que criamos (npm run start). O Healthcheck Pathsera uma rota para o Railway saber que nssa aplicacao esta funcional, depois configuramos pois nao criamos essa rota. Em variaveis, configuirar as variavde ambiente. No nosso caso colocaremos a DATABASE_URLm, e no value pegar o valor de conexao do servico do postgres criado no connect, Postgresql connection url.
 Agora temos que configurar a variavel PORT para a porta que esta sendo usada pela aplicacao (estavamos usando a 3333).
 No caso do Railways ele que precisa definir a porta. Entao no arquivo server usaremos process.env.PORT.
+Quando der um push no github, veremos que o Railway ja comeca um novo deploy com as modificacoes.
+Mas se vermos o Postgresql, veremos que nao foi criada nossa tabela. Isso porque nao foi executada a migration.  Entao o coando de start, vamos acrescentar para rodar tambem a migration, com "npx prisma migrate deploy && npm run start" na configuracao start command do Railway.
+Mas como estavamos usando o sqlite, a migration ficou locked com a configuracao do sqlite. Para resolver, vamos deletar toda a pasta migrations, e recriar as migrayions com o postgres. Mas ai teriamos que estar com o postgresql instalado na maquina, entao vamos fazer uma gambi mudando o arquivo migration_lock manualmente.
+Agora damos um push pra fazer o novo deploy com o comando de migration adicionado no Railway.
+
 
 
 
