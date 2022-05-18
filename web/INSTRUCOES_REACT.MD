@@ -58,7 +58,8 @@ Quando der um push no github, veremos que o Railway ja comeca um novo deploy com
 Mas se vermos o Postgresql, veremos que nao foi criada nossa tabela. Isso porque nao foi executada a migration.  Entao o coando de start, vamos acrescentar para rodar tambem a migration, com "npx prisma migrate deploy && npm run start" na configuracao start command do Railway.
 Mas como estavamos usando o sqlite, a migration ficou locked com a configuracao do sqlite. Para resolver, vamos deletar toda a pasta migrations, e recriar as migrayions com o postgres. Mas ai teriamos que estar com o postgresql instalado na maquina, entao vamos fazer uma gambi mudando o arquivo migration_lock manualmente.
 Agora damos um push pra fazer o novo deploy com o comando de migration adicionado no Railway.
-
+Ver se foi criada a database feedbacks no postgresql, retira o comando de migration da conguracao do deploy. Testa o link, vai dar can not GET (ou nosso Hello World que esta configurado) entao ta rodando.
+CVolta no Vercel, e no value da VITE_API_URL que estava o teste.com, colocamos o link da api no Railway. 
 
 
 
